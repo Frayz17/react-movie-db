@@ -6,7 +6,8 @@ import './App.css'
 const movies = [
   {
     id: 1,
-    title: 'Titanik'
+    title: 'Titanik',
+    desc: 'ship movie'
   },
   {
     id: 2,
@@ -26,7 +27,7 @@ class App extends Component {
           <img src={logo} className='App-logo' alt='logo' />
         </header>
         {movies.map(movie => {
-          return <Movie title={movie.title} key={movie.id} />
+          return <Movie movie={movie} desc={movie.desc} key={movie.id} />
         })}
       </div>
     )
