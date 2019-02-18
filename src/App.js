@@ -10,7 +10,7 @@ class App extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch()
+      const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=bf071843832238b122dcbb33c2a416b4&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
       const movies = await res.json()
       
       this.setState({
