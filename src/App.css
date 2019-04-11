@@ -1,8 +1,12 @@
+a {
+  text-decoration: none;
+}
+
 .App {
   text-align: center;
 }
 
-.App-header {
+.mainHeader {
   background-color: #282c34;
   height: 60px;
   display: flex;
@@ -12,15 +16,8 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.mainHeader__title {
+  color: white;
+  text-decoration: none;
+  
 }
-/* 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

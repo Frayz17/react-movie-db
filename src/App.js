@@ -1,38 +1,32 @@
-import React, { Component } from 'react'
-import Movie from './components/Movie'
-import logo from './logo.svg'
-import './App.css'
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link,
+} from 'react-router-dom';
+import MoviesList from './MoviesList';
+import './App.css';
 
-class App extends Component {
-  state = {
-    movies: []
-  }
+const App = () => (
+  <Router>
+    <div className="App">
+      <header className="mainHeader">
+        <Link to="/">
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          <h2 className="mainHeader__title">Movie DB</h2>
+        </Link>
+      </header>
+      <Switch>
+        <Route exact path="/" component={MoviesList} />
+        <Route path="/:id" component={Test} />
+      </Switch>
+    </div>
+  </Router>
+);
 
-  async componentDidMount() {
-    try {
-      const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=bf071843832238b122dcbb33c2a416b4&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
-      const movies = await res.json()
-      
-      this.setState({
-        movies: movies.results
-      })
-    } catch (e) {
-      console.log(e)
-    }
-  }
+export default App;
 
-  render () {
-    return (
-      <div className='App'>
-        <header className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-        </header>
-        {this.state.movies.map(movie => {
-          return <Movie movie={movie} key={movie.id} />
-        })}
-      </div>
-    )
-  }
-}
-
-export default App
+const Test = ({ match }) => (
+  <h2>{match.params.id}</h2>
+);
