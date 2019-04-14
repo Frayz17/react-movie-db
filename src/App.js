@@ -6,7 +6,7 @@ import {
   Link
 } from 'react-router-dom'
 import MoviesList from './MoviesList'
-import MovieInf from './components/MovieInf'
+import MovieDetail from './components/MovieDetail'
 import './App.css'
 
 const App = () => (
@@ -19,14 +19,10 @@ const App = () => (
       </header>
       <Switch>
         <Route exact path='/' component={MoviesList} />
-        <Route path='/:id' component={MovieInf} />
+        <Route path='/:id' component={MovieDetail} />
       </Switch>
     </div>
   </Router>
 )
 
 export default App
-
-const Test = ({ match }) => (
-  <h2>{match.params.id}</h2>
-)

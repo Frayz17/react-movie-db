@@ -7,7 +7,7 @@ a {
 }
 
 .mainHeader {
-  background-color: #282c34;
+  background-color: #111;
   height: 60px;
   display: flex;
   flex-direction: column;
